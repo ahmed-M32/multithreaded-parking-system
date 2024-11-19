@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8bef837-27a7-4836-bed7-e986e86cde10" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/new.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Gate.java" afterDir="false" />
+    <list default="true" id="e8bef837-27a7-4836-bed7-e986e86cde10" name="Changes" comment="added classes : car,parking_lot, park_controller, gate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/park_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/park_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/parking_lot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/parking_lot.java" afterDir="false" />
     </list>
@@ -91,6 +89,10 @@
       <workItem from="1730993267135" duration="1964000" />
       <workItem from="1730995562172" duration="1494000" />
       <workItem from="1731005911915" duration="2652000" />
+      <workItem from="1731148251845" duration="5014000" />
+      <workItem from="1731192112704" duration="2000" />
+      <workItem from="1731198435732" duration="778000" />
+      <workItem from="1731199513874" duration="404000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -108,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730952437970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added classes : car,parking_lot, park_controller, gate">
+      <option name="closed" value="true" />
+      <created>1731148325376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731148325376</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added classes : car,parking_lot, park_controller, gate" />
+    <option name="LAST_COMMIT_MESSAGE" value="added classes : car,parking_lot, park_controller, gate" />
   </component>
 </project>

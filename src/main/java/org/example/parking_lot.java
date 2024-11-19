@@ -1,8 +1,7 @@
 package org.example;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 
@@ -16,7 +15,8 @@ public class parking_lot {
     parking_lot(int n) {
         park_control = new Semaphore(n);
     }
-    int available_spots(){
+
+    int available_spots() {
         return park_control.availablePermits();
     }
 
@@ -39,12 +39,14 @@ public class parking_lot {
             Thread.sleep(car.stay_time * 1000L);
             synchronized (this) {
                 currently_parked--;
+                park_control.release();
+                System.out.println("Car " + car.car_id + " from Gate " + car.gate_id + " left after " + car.stay_time + " units of time. (parking status : " + currently_parked + " spots occupied)");
+
+
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
-            park_control.release();
-            System.out.println("Car " + car.car_id + " from Gate " + car.gate_id + " left after " + car.stay_time + " units of time. (parking status : " + currently_parked + " spots occupied)");
 
         }
     }

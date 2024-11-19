@@ -8,7 +8,6 @@ public class Car extends Thread {
     int stay_time;
 
 
-
     Car(int gate_id, int car_id, int arrival_time, int stay_time, parking_lot spot) {
         this.gate_id = gate_id;
         this.car_id = car_id;
@@ -17,6 +16,7 @@ public class Car extends Thread {
         this.spot = spot;
 
     }
+
     @Override
     public void run() {
         try {

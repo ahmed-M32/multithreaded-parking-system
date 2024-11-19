@@ -3,14 +3,13 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class park_controller {
     static List<Car> cars;
-    static parking_lot p;
+    static parking_lot p = new parking_lot(4);
     Gate gate1 = new Gate(1, p);
     Gate gate2 = new Gate(2, p);
     Gate gate3 = new Gate(3, p);
@@ -18,33 +17,41 @@ public class park_controller {
 
     park_controller(parking_lot p) {
         park_controller.p = new parking_lot(4);
-
     }
-
-    public void time_control() {
-        Thread time = new Thread();
-
-    }
-
 
     public void start() throws InterruptedException {
+        int size = cars.size();
         int time = 0;
+
+
         gate1.start();
         gate2.start();
         gate3.start();
-        for (Car car : cars) {
 
-            if (car.gate_id == 1) {
-                gate1.add_car(car);
-            } else if (car.gate_id == 2) {
-                gate2.add_car(car);
-            } else if (car.gate_id == 3) {
-                gate3.add_car(car);
+        while (!cars.isEmpty()) {
+            List<Car> carsToAdd = new ArrayList<>();
+
+            for (Car car : cars) {
+                if (car.arrival_time == time) {
+                    carsToAdd.add(car);
+                }
             }
+
+            for (Car car : carsToAdd) {
+                switch (car.gate_id) {
+                    case 1 -> gate1.add_car(car);
+                    case 2 -> gate2.add_car(car);
+                    case 3 -> gate3.add_car(car);
+                }
+                cars.remove(car); // remove car after processing
+            }
+
             Thread.sleep(1000);
             time++;
         }
-
+        for (int i = 0; i < cars.size() ; i++) {
+            System.out.println(cars.get(i).car_id);
+        }
         try {
             gate1.join();
             gate2.join();
