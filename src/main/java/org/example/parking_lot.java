@@ -1,31 +1,32 @@
 package org.example;
 
+import java.util.concurrent.CountDownLatch;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.Semaphore;
 
 public class parking_lot {
-    public final Semaphore park_control;
+    private CountDownLatch latch;
+
+    public final newSem park_control;
     int cars_served = 0;
     int currently_parked = 0;
-    private final Map<Integer, Integer> gateCounts = new HashMap<>();
 
 
     parking_lot(int n) {
-        park_control = new Semaphore(n);
+        park_control = new newSem(n);
+
     }
 
-    int available_spots() {
-        return park_control.availablePermits();
+
+    public void setLatch(int n) {
+        latch = new CountDownLatch(n);
+
     }
 
     void park_car(Car car) throws InterruptedException {
         try {
-
             if (park_control.availablePermits() == 0) {
                 System.out.println("car " + car.car_id + " is waiting at gate " + car.gate_id);
-
+                car.waiting = true;
             }
             park_control.acquire();
 
@@ -33,7 +34,6 @@ public class parking_lot {
                 cars_served++;
                 currently_parked++;
                 System.out.println("Car " + car.car_id + " from Gate " + car.gate_id + " parked " + car.arrival_time + " (parking status : " + currently_parked + ")");
-                gateCounts.put(car.gate_id, gateCounts.getOrDefault(car.gate_id, 0) + 1);
 
             }
             Thread.sleep(car.stay_time * 1000L);
@@ -41,13 +41,16 @@ public class parking_lot {
                 currently_parked--;
                 park_control.release();
                 System.out.println("Car " + car.car_id + " from Gate " + car.gate_id + " left after " + car.stay_time + " units of time. (parking status : " + currently_parked + " spots occupied)");
-
-
+                latch.countDown();
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        } finally {
-
         }
+    }
+    public void awaitCompletion() throws InterruptedException {
+        latch.await();
+    }
+    public void report() {
+        System.out.println("Total cars served: " + cars_served);
     }
 }

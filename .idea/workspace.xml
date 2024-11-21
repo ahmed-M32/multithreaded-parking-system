@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8bef837-27a7-4836-bed7-e986e86cde10" name="Changes" comment="added classes : car,parking_lot, park_controller, gate">
+    <list default="true" id="e8bef837-27a7-4836-bed7-e986e86cde10" name="Changes" comment="added classes : car,parking_lot, park_controller, gate : final commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/newSem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/park_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/park_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/parking_lot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/parking_lot.java" afterDir="false" />
     </list>
@@ -66,6 +68,26 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.main" />
+      <module name="parking_system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -93,6 +115,8 @@
       <workItem from="1731192112704" duration="2000" />
       <workItem from="1731198435732" duration="778000" />
       <workItem from="1731199513874" duration="404000" />
+      <workItem from="1732058356674" duration="143000" />
+      <workItem from="1732210312557" duration="3197000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -118,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731148325376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added classes : car,parking_lot, park_controller, gate : final commit">
+      <option name="closed" value="true" />
+      <created>1732058399201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732058399201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +170,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added classes : car,parking_lot, park_controller, gate" />
-    <option name="LAST_COMMIT_MESSAGE" value="added classes : car,parking_lot, park_controller, gate" />
+    <MESSAGE value="added classes : car,parking_lot, park_controller, gate : final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added classes : car,parking_lot, park_controller, gate : final commit" />
   </component>
 </project>

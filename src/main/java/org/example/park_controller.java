@@ -20,7 +20,9 @@ public class park_controller {
     }
 
     public void start() throws InterruptedException {
-        int size = cars.size();
+
+        p.setLatch(cars.size());
+
         int time = 0;
 
 
@@ -43,19 +45,19 @@ public class park_controller {
                     case 2 -> gate2.add_car(car);
                     case 3 -> gate3.add_car(car);
                 }
-                cars.remove(car); // remove car after processing
+                cars.remove(car);
             }
 
             Thread.sleep(1000);
             time++;
         }
-        for (int i = 0; i < cars.size() ; i++) {
-            System.out.println(cars.get(i).car_id);
-        }
+
         try {
             gate1.join();
             gate2.join();
             gate3.join();
+
+            p.awaitCompletion();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,9 +86,12 @@ public class park_controller {
         cars = new ArrayList<>(carData);
     }
 
-    void print() {
-        for (Car car : cars) {
-            System.out.println(car.car_id);
-        }
+    public void report(){
+        p.report();
+        System.out.println("current cars parked : " + cars.size() );
+        System.out.println("Gate 1 served : " + gate1.getServedCars());
+        System.out.println("Gate 2 served : " + gate2.getServedCars());
+        System.out.println("Gate 3 served : " + gate3.getServedCars());
     }
+
 }

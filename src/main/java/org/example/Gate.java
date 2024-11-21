@@ -5,12 +5,12 @@ import java.util.List;
 
 
 public class Gate extends Thread {
-    int waiting_time;
     int gate_id;
     List<Car> cars;
     parking_lot parking_spot = null;
     private final Object lock = new Object();
     List<Car> waiting_cars = new ArrayList<>();
+    int cars_served = 0;
 
 
     Gate(int gate_id, parking_lot parking_lot) {
@@ -19,20 +19,19 @@ public class Gate extends Thread {
         this.cars = new ArrayList<>();
     }
 
-    public int get_id() {
-        return gate_id;
-    }
 
     void add_car(Car car) throws InterruptedException {
         synchronized (lock) {
             cars.add(car);
+            cars_served++;
             lock.notify();
         }
     }
 
-    public void get_car(List<Car> cars) {
-        this.cars = new ArrayList<Car>(cars);
+    public int getServedCars(){
+        return cars_served;
     }
+
 
     @Override
     public void run() {
@@ -50,10 +49,6 @@ public class Gate extends Thread {
                     } else {
 
                         Car current = cars.remove(0);
-                        /*if (parking_spot.available_spots() == 0 && parking_spot != null) {
-                            waiting_cars.add(current);
-                            System.out.println("here");
-                        }*/
                         waiting_cars.forEach(car -> {
                             car.get_park_spot(parking_spot);
                         });

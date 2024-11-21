@@ -6,6 +6,8 @@ public class Car extends Thread {
     int car_id;
     int arrival_time;
     int stay_time;
+    boolean waiting = false;
+    int waiting_time =0;
 
 
     Car(int gate_id, int car_id, int arrival_time, int stay_time, parking_lot spot) {
@@ -23,6 +25,13 @@ public class Car extends Thread {
             spot.park_car(this);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void count() throws InterruptedException {
+        while(waiting){
+            Thread.sleep(1000);
+            waiting_time++;
         }
     }
 
